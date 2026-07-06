@@ -29,15 +29,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Debug files
-        run: |
-          pwd
-          ls -la
-          find . -name "main.py"
-
       - name: Run Unit Tests
         run: |
-          pytest
+          PYTHONPATH=. pytest
 
       - name: Verify FastAPI Application Starts
         run: |
